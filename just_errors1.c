@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * _derratoi - converts a string to an integer
- * @s: the string to be converted
- * Return: 0 if no numbers in string, converted number otherwise
- *       -1 on error
+ * _derratoi - this function converts string to int.
+ * @s: this is the string to converted.
+ * Return: it returns 0 if no numbs in string, converted numb otherwise
+ * -1 on error
  */
 int _derratoi(char *s)
 {
@@ -29,11 +29,13 @@ int _derratoi(char *s)
 }
 
 /**
- * dprint_error - prints an error message
- * @info: the parameter & return info struct
- * @estr: string containing specified error type
- * Return: 0 if no numbers in string, converted number otherwise
- *        -1 on error
+ * dprint_error - this function 
+ * prints out an error message
+ * @info: this is the param & return info struct
+ * @estr: this string contains specified error type
+ * Return: this always returns 0 if no numbers in string,
+ * converted number otherwise
+ * -1 on error
  */
 void dprint_error(info_t *info, char *estr)
 {
@@ -47,11 +49,12 @@ void dprint_error(info_t *info, char *estr)
 }
 
 /**
- * dprint_d - function prints a decimal (integer) number (base 10)
- * @input: the input
- * @fd: the filedescriptor to write to
+ * dprint_d - this function prints out
+ * a decimal (int) numb (base 10)
+ * @input: this is the input
+ * @fd: this is the filedescriptor to write to
  *
- * Return: number of characters printed
+ * Return: this is numb of charac printed
  */
 int dprint_d(int input, int fd)
 {
@@ -86,10 +89,10 @@ int dprint_d(int input, int fd)
 }
 
 /**
- * dconvert_number - converter function, a clone of itoa
- * @num: number
- * @base: base
- * @flags: argument flags
+ * dconvert_number - this function converts function, a clone of itoa
+ * @num: the numb
+ * @base: the base
+ * @flags: the arg flags
  *
  * Return: string
  */
@@ -122,7 +125,8 @@ char *dconvert_number(long int num, int base, int flags)
 }
 
 /**
- * dremove_comments - function replaces first instance of '#' with '\0'
+ * dremove_comments - this function replaces
+ * first instance of '#' with '\0'
  * @buf: address of the string to modify
  *
  * Return: Always 0;

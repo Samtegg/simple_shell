@@ -63,7 +63,8 @@ int _dmycd(info_t *info)
 			return (1);
 		}
 		_dputs(_dgetenv(info, "OLDPWD=")), _dputchar('\n');
-		dchdir_ret = /* TODO: what then should this be? */
+		dchdir_ret = /* TODO: what then 
+				should this be? */
 			chdir((ddir = _dgetenv(info, "OLDPWD=")) ? ddir : "/");
 	}
 	else
@@ -83,7 +84,8 @@ int _dmycd(info_t *info)
 
 /**
  * _dmyhelp - this function changes current dir of the process
- * @info: the Struct containing potential arguments. Used to maintain
+ * @info: the Struct containing potential arguments, 
+ * used to maintain
  *  constant function prototype.
  *  Return: its Always 0
  */
