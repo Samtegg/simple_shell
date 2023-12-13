@@ -1,33 +1,38 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
 
+#include <string.h>
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <string.h>
+#include <errno.h>
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
-#include <limits.h>
 #include <fcntl.h>
-#include <errno.h>
 
-/* this is for reading/writing buffers */
+
+/* this is for reading
+ * /writing the buffers */
 #define READ_BUF_SIZE 1024
 #define WRITE_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-/* this is for the command chaining */
+/* this is for, 
+ * the command chaining */
 #define CMD_NORM	0
 #define CMD_OR		1
 #define CMD_AND		2
 #define CMD_CHAIN	3
 
-/* this is for the convert_number() */
+/* this is for, 
+ * the convert_number() */
 #define CONVERT_LOWERCASE	1
 #define CONVERT_UNSIGNED	2
 
-/* then 1 if to use system getline() */
+/* then reply 1 if,
+ * to use system getline() */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
 
@@ -38,11 +43,13 @@ extern char **environ;
 
 
 /**
- * struct liststr - singly linked list
- * @num: the number field
- * @str: a string
- * @next: points to the next node
+ * struct liststr - this i,s
+ *  singly linked list
+ * @num: tis is the numb field
+ * @str: this is a string
+ * @next: these are the points to the next node
  */
+
 typedef struct liststr
 {
 	int num;
@@ -51,26 +58,28 @@ typedef struct liststr
 } list_t;
 
 /**
- *struct passinfo - contains pseudo-arguements to pass into a function,
- *		allowing uniform prototype for function pointer struct
- *@arg: a string generated from getline containing arguements
- *@argv: an array of strings generated from arg
- *@path: a string path for the current command
- *@argc: the argument count
- *@line_count: the error count
- *@err_num: the error code for exit()s
- *@linecount_flag: if on count this line of input
- *@fname: the program filename
- *@env: linked list local copy of environ
- *@environ: custom modified copy of environ from LL env
- *@history: the history node
- *@alias: the alias node
- *@env_changed: on if environ was changed
- *@status: the return status of the last exec'd command
- *@cmd_buf: address of pointer to cmd_buf, on if chaining
- *@cmd_buf_type: CMD_type ||, &&, ;
- *@readfd: the fd from which to read line input
- *@histcount: the history line number count
+ *struct passinfo - this part of the code contains 
+  pseudo-arguements to pass into the function,
+ *thus allowing uniform prototype for function pointer struct
+ *@arg: this is a string that will be generated 
+  from the getline containing the arguements
+ *@argv: this is an array of strings that are generated from arg
+ *@path: the string path for current command
+ *@argc: this is the argument count
+ *@line_count: this is the error count
+ *@err_num: this is the error code for exit()s
+ *@linecount_flag: if there is on count this line of input
+ *@fname: this is the program filename
+ *@env: this is the linked list local copy of the environ
+ *@environ: the custom modified copy of environ from LL env
+ *@history: this is the history node
+ *@alias: this is the alias node
+ *@env_changed: this will on if environ was changed
+ *@status: this is the return status of the last exec'd command
+ *@cmd_buf: this is the address of pointer to cmd_buf, on if chaining
+ *@cmd_buf_type: the CMD_type ||, &&, ;
+ *@readfd: this is the fd from which to read line input
+ *@histcount: this is the history line number count
  */
 typedef struct passinfo
 {
@@ -89,18 +98,21 @@ typedef struct passinfo
 	int env_changed;
 	int status;
 
-	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
-	int cmd_buf_type; /* CMD_type ||, &&, ; */
+	char **cmd_buf; /* this pointer to cmd ; chain 
+			   buffer, for memory mangement */
+	int cmd_buf_type; /* this CMD_type ||, &&, ; */
 	int readfd;
 	int histcount;
 } info_t;
+
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
 	0, 0, 0}
 
 /**
- *struct builtin - contains a builtin string and related function
+ *struct builtin - this struct contains a builtin
+ string and related function
  *@type: the builtin command flag
  *@func: the function
  */

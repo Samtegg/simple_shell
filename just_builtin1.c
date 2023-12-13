@@ -1,11 +1,12 @@
 #include "shell.h"
 
 /**
- * _myhistory - displays the history list, one command by line, preceded
- *              with line numbers, starting at 0.
- * @info: Structure containing potential arguments. Used to maintain
- *        constant function prototype.
- *  Return: Always 0
+ * _dmyhistory - this function displays history list,
+ * just one command by line, preceded
+ *              with line numbs, starting at zero.
+ * @info: this is the Structure containing potential arg used to maintain
+ *        the constant function prototype.
+ *  Return: it Always 0
  */
 int _dmyhistory(info_t *info)
 {
@@ -14,11 +15,12 @@ int _dmyhistory(info_t *info)
 }
 
 /**
- * unset_alias - sets alias to string
- * @info: parameter struct
+ * dunset_alias - this function 
+ * sets alias to string
+ * @info: the params struct
  * @str: the string alias
  *
- * Return: Always 0 on success, 1 on error
+ * Return: it Always 0 on success, 1 on error
  */
 int dunset_alias(info_t *info, char *str)
 {
@@ -37,11 +39,11 @@ int dunset_alias(info_t *info, char *str)
 }
 
 /**
- * set_alias - sets alias to string
- * @info: parameter struct
+ * dset_alias - this function sets alias to string
+ * @info: the param struct
  * @str: the string alias
  *
- * Return: Always 0 on success, 1 on error
+ * Return: it Always 0 on success, 1 on error
  */
 int dset_alias(info_t *info, char *str)
 {
@@ -58,7 +60,7 @@ int dset_alias(info_t *info, char *str)
 }
 
 /**
- * dprint_alias - prints an alias string
+ * dprint_alias - this function prints an alias string
  * @node: the alias node
  *
  * Return: Always 0 on success, 1 on error
@@ -81,10 +83,11 @@ int dprint_alias(list_t *node)
 }
 
 /**
- * _dmyalias - mimics the alias builtin (man alias)
- * @info: Structure containing potential arguments. Used to maintain
- *          constant function prototype.
- *  Return: Always 0
+ * _dmyalias - this function mimics alias builtin - (main alias)
+ * @info: the Struct thats containing 
+ * potential arguments,used to maintain
+ * constant function prototype.
+ *  Return: its Always 0
  */
 int _dmyalias(info_t *info)
 {
