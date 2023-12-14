@@ -1,21 +1,24 @@
 #include "shell.h"
 
 /**
- * dinput_buf - buffers chained commands
- * @info: parameter struct
- * @buf: address of buffer
- * @len: address of len var
+ * dinput_buf - this function
+ * buffers the chained commands
+ * @info: the param struct
+ * @buf: the address of the buffer
+ * @len: the address of the len var
  *
- * Return: bytes read
+ * Return: returns bytes read
  */
 ssize_t dinput_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t dr = 0;
 	size_t dlen_p = 0;
 
-	if (!*len) /* if nothing left in the buffer, fill it */
+	if (!*len) /* if there is nothing
+		      left in the buffer, then fill it */
 	{
-		/*bfree((void **)info->cmd_buf);*/
+		/*bfree((void **)
+		 * info->cmd_buf);*/
 		free(*buf);
 		*buf = NULL;
 		signal(SIGINT, dsigintHandler);
@@ -28,13 +31,14 @@ ssize_t dinput_buf(info_t *info, char **buf, size_t *len)
 		{
 			if ((*buf)[dr - 1] == '\n')
 			{
-				(*buf)[dr - 1] = '\0'; /* remove trailing newline */
+				(*buf)[dr - 1] = '\0'; /* remove the trailing newline */
 				dr--;
 			}
 			info->linecount_flag = 1;
 			dremove_comments(*buf);
 			dbuild_history_list(info, *buf, info->histcount++);
-			/* if (_strchr(*buf, ';')) is this a command chain? */
+			/* if (_strchr(*buf, ';')) is
+			 * this the command chain? */
 			{
 				*len = dr;
 				info->cmd_buf = buf;
@@ -45,10 +49,11 @@ ssize_t dinput_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * dget_input - gets a line minus the newline
- * @info: parameter struct
+ * dget_input - this function gets a
+ * line minus the newline
+ * @info: the param struct
  *
- * Return: bytes read
+ * Return: returns bytes read
  */
 ssize_t dget_input(info_t *info)
 {
@@ -90,12 +95,12 @@ ssize_t dget_input(info_t *info)
 }
 
 /**
- * dread_buf - reads a buffer
- * @info: parameter struct
- * @buf: buffer
- * @i: size
+ * dread_buf - this function reads a buffer
+ * @info: the param struct
+ * @buf: the buffer
+ * @i: the size
  *
- * Return: r
+ * Return: returns r
  */
 ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
@@ -110,12 +115,12 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * _dgetline - gets the next line of input from STDIN
- * @info: parameter struct
- * @ptr: address of pointer to buffer, preallocated or NULL
- * @length: size of preallocated ptr buffer if not NULL
+ * _dgetline - this function gets the next line of input from STDIN
+ * @info: the param struct
+ * @ptr: the address  to buffer, preallocated or NULL
+ * @length: reallocated ptr buffer if not NULL
  *
- * Return: s
+ * Return: s theioshhcw
  */
 int _dgetline(info_t *info, char **ptr, size_t *length)
 {
@@ -138,7 +143,7 @@ int _dgetline(info_t *info, char **ptr, size_t *length)
 	dc = _dstrchr(buf + di, '\n');
 	dk = dc ? 1 + (unsigned int)(dc - buf) : dlen;
 	dnew_p = _drealloc(dp, ds, ds ? ds + dk : dk + 1);
-	if (!dnew_p) /* MALLOC FAILURE! */
+	if (!dnew_p) /* the  MALLOC FAILURE! */
 		return (dp ? free(dp), -1 : -1);
 
 	if (ds)
@@ -157,10 +162,10 @@ int _dgetline(info_t *info, char **ptr, size_t *length)
 }
 
 /**
- * dsigintHandler - blocks ctrl-C
- * @sig_num: the signal number
+ * dsigintHandler - this function blocks ctrl-C
+ * @sig_num: the signal numeric
  *
- * Return: void
+ * Return: the void
  */
 void dsigintHandler(__attribute__((unused))int sig_num)
 {

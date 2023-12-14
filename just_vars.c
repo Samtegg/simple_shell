@@ -1,12 +1,13 @@
 #include "shell.h"
 
 /**
- * dis_chain - test if current char in buffer is a chain delimeter
- * @info: the parameter struct
- * @buf: the char buffer
- * @p: address of current position in buf
+ * dis_chain - this function test
+ * current char in buf is chain delimeter
+ * @info: param struct
+ * @buf: char buf
+ * @p: the address current position in buf
  *
- * Return: 1 if chain delimeter, 0 otherwise
+ * Return: this 1 if chain delimeter, 0
  */
 int dis_chain(info_t *info, char *buf, size_t *p)
 {
@@ -36,14 +37,15 @@ int dis_chain(info_t *info, char *buf, size_t *p)
 }
 
 /**
- * dcheck_chain - checks we should continue chaining based on last status
- * @info: the parameter struct
- * @buf: the char buffer
- * @p: address of current position in buf
- * @i: starting position in buf
- * @len: length of buf
+ * dcheck_chain - this function checks
+ * should continue chain based last status
+ * @info: param struct
+ * @buf: char buf
+ * @p: address current position in buf
+ * @i: the start position in buf
+ * @len: the len of buf
  *
- * Return: Void
+ * Return: the Void
  */
 void dcheck_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
@@ -70,10 +72,11 @@ void dcheck_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 }
 
 /**
- * dreplace_alias - replaces an aliases in the tokenized string
- * @info: the parameter struct
+ * dreplace_alias - this function replaces
+ * aliases in tokenized string
+ * @info: param struct
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: this  1 if replaced, 0
  */
 int dreplace_alias(info_t *info)
 {
@@ -99,10 +102,11 @@ int dreplace_alias(info_t *info)
 }
 
 /**
- * dreplace_vars - replaces vars in the tokenized string
- * @info: the parameter struct
+ * dreplace_vars - this function replaces
+ * vars in tokenized string
+ * @info: param struct
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: this 1 if replaced, 0
  */
 int dreplace_vars(info_t *info)
 {
@@ -140,11 +144,12 @@ int dreplace_vars(info_t *info)
 }
 
 /**
- * dreplace_string - replaces string
- * @old: address of old string
- * @new: new string
+ * dreplace_string - this function 
+ * replaces string
+ * @old: this address old string
+ * @new: the new string
  *
- * Return: 1 if replaced, 0 otherwise
+ * Return: this 1 if replaced, 0
  */
 int dreplace_string(char **old, char *new)
 {

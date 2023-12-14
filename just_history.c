@@ -1,10 +1,11 @@
 #include "shell.h"
 
 /**
- * get_history_file - gets the history file
- * @info: parameter struct
+ * get_history_file - this functiuon 
+ * gets the history file
+ * @info: the param struct
  *
- * Return: allocated string containg history file
+ * Return: allocated history file
  */
 
 char *dget_history_file(info_t *info)
@@ -25,10 +26,11 @@ char *dget_history_file(info_t *info)
 }
 
 /**
- * dwrite_history - creates a file, or appends to an existing file
- * @info: the parameter struct
+ * dwrite_history - this function
+ * creates a file, or n existing file
+ * @info: the  struct
  *
- * Return: 1 on success, else -1
+ * Return: 1 on, else -1
  */
 int dwrite_history(info_t *info)
 {
@@ -54,10 +56,10 @@ int dwrite_history(info_t *info)
 }
 
 /**
- * dread_history - reads history from file
- * @info: the parameter struct
+ * dread_history - this function reads history from file
+ * @info: the struct
  *
- * Return: histcount on success, 0 otherwise
+ * Return: hist on success, 0 other
  */
 int dread_history(info_t *info)
 {
@@ -103,12 +105,13 @@ int dread_history(info_t *info)
 }
 
 /**
- * dbuild_history_list - adds entry to a history linked list
- * @info: Structure containing potential arguments. Used to maintain
- * @buf: buffer
- * @linecount: the history linecount, histcount
+ * dbuild_history_list - this function adds
+ * entry to a linked list
+ * @info: the Struct potential arg used to maintain
+ * @buf: the buffer
+ * @linecount: linecount, histcount
  *
- * Return: Always 0
+ * Return: its Always 0
  */
 int dbuild_history_list(info_t *info, char *buf, int linecount)
 {
@@ -124,10 +127,11 @@ int dbuild_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - renumbers the history linked list after changes
- * @info: Structure containing potential arguments. Used to maintain
+ * renumber_history - this function renumbers
+ * the  list after changes
+ * @info: the Struct potential arguments. Used to maintain
  *
- * Return: the new histcount
+ * Return: the histcount
  */
 int drenumber_history(info_t *info)
 {

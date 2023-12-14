@@ -1,8 +1,9 @@
 #include "shell.h"
 
 /**
- * dclear_info - initializes info_t struct
- * @info: struct address
+ * dclear_info - this function
+ * initializes info_t struct
+ * @info: the struct address
  */
 void dclear_info(info_t *info)
 {
@@ -13,9 +14,10 @@ void dclear_info(info_t *info)
 }
 
 /**
- * dset_info - initializes info_t struct
- * @info: struct address
- * @av: argument vector
+ * dset_info - this function
+ * initializes info_t struct
+ * @info: the struct address
+ * @av: the arg vector
  */
 void dset_info(info_t *info, char **av)
 {
@@ -45,9 +47,10 @@ void dset_info(info_t *info, char **av)
 }
 
 /**
- * dfree_info - frees info_t struct fields
- * @info: struct address
- * @all: true if freeing all fields
+ * dfree_info - the function frees
+ * info_t struct fields
+ * @info: the struct address
+ * @all: returns true if freeing all fields
  */
 void dfree_info(info_t *info, int all)
 {
